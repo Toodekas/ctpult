@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'HelloWorld',
   data() {
@@ -11,11 +13,8 @@ export default {
     }
   },
   mounted() {
-    fetch("/api/messages/hello")
-      .then((response) => response.text())
-      .then((data) => {
-          this.msg = data;
-      });
+    axios.get("/api/readings").then((response) => { console.log(response)
+      this.msg = response.data});
   }
 }
 </script>
