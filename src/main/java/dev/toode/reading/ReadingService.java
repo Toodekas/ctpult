@@ -57,6 +57,9 @@ public class ReadingService {
     }
 
     public void addReading10(List<Reading> readings) {
+        if(readings.size() != 10){
+            throw new IllegalStateException("Payload does not contain 10 values");
+        }
         for (Reading reading: readings) {
             this.addReading(reading);
         }

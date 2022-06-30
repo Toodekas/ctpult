@@ -25,7 +25,6 @@ public class DailyReading implements Comparable<DailyReading>{
 
     public Long getDateTime() {
         DateTimeFormatter df = DateTimeFormat.forPattern("yyyy-MM-dd");
-        System.out.println(df.parseMillis(this.date));
         return df.parseMillis(this.date);
     }
 

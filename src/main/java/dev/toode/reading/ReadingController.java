@@ -35,8 +35,6 @@ public class ReadingController {
 
     @PostMapping("/reading")
     public void addNewReading(@RequestBody Reading reading) {
-        System.out.println("----------------------------------");
-        System.out.println(reading);
         readingService.addReading(reading);
     }
 
