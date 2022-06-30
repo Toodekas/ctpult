@@ -1,6 +1,21 @@
 package dev.toode.reading;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Reading {
+    @Id
+    @SequenceGenerator(
+            name = "reading_sequence",
+            sequenceName = "reading_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "reading_sequence"
+    )
+    private Long id;
     private int deviceId;
     private Long timestamp;
     private int value;
